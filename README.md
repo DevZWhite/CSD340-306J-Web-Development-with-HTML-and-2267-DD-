@@ -12,7 +12,7 @@ A hands-on course repository for learning HTML and CSS from the ground up, cover
 
 This repository contains coursework, projects, and code examples for **HTML & CSS Fundamentals**. The course covers the full lifecycle of building web pages, from writing clean semantic HTML to styling with CSS and applying responsive design principles.
 
-By the end of this course, you'll be comfortable working with **HTML structure**, **CSS styling**, and **modern web development workflows** — and understand when and how to apply them.
+By the end of this course, you'll be comfortable working with **HTML structure**, **CSS styling**, and **modern web development workflows** and understand when and how to apply them.
 
 **Prerequisite:** Basic computer literacy; no prior coding experience required.
 
@@ -46,17 +46,17 @@ Successfully completing this course, students will be able to:
 
 ## 📁 Topic Outline
 
-### Module 1 — HTML & CSS
+### Module 1 | HTML & CSS
 - A. Page structure
 - B. Semantic markup
 - C. Browser compatibility
 
-### Module 2 — Web Development Tools
+### Module 2 | Web Development Tools
 - A. Text editors and extensions
 - B. Browser tools
 - C. Version control
 
-### Module 3 — Web Development Processes and Topics
+### Module 3 | Web Development Processes and Topics
 - A. Design process
 - B. Atomic Design
 - C. Pattern Libraries
@@ -66,11 +66,11 @@ Successfully completing this course, students will be able to:
 
 ## 🛠️ Technologies Used
 
-- **HTML5** — Structuring web content
-- **CSS3** — Styling and layout
-- **VS Code / Text Editors** — Code editing with helpful extensions
-- **Chrome DevTools** — Inspecting and debugging in the browser
-- **Git / GitHub** — Version control and project hosting
+- **HTML5** | Structuring web content
+- **CSS3** | Styling and layout
+- **VS Code / Text Editors** | Code editing with helpful extensions
+- **Chrome DevTools** | Inspecting and debugging in the browser
+- **Git / GitHub** | Version control and project hosting
 
 ---
 
@@ -86,7 +86,7 @@ If you're a classmate or reviewer exploring this repo, here's what to know:
 
 ## 📌 Academic Integrity
 
-This repository is for personal **learning** and **portfolio** purposes. If you are in the same course, please write your **own code**. Referencing concepts and structure is fine — copying is not.
+This repository is for personal **learning** and **portfolio** purposes. If you are in the same course, please write your **own code**. Referencing concepts and structure is fine | copying is not.
 
 ---
 
@@ -96,4 +96,4 @@ This project is for educational use. No license is applied unless otherwise note
 
 ---
 
-*Bellevue University — Software Development*
+*Bellevue University | Software Development*
