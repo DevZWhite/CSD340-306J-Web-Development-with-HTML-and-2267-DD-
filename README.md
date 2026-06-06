@@ -1,4 +1,8 @@
-# HTML & CSS Fundamentals
+# Web Development with HTML and CSS.
+
+## Contributors
+  - Developer: Zachary White
+  - Instructor: Sue Sampson
 
 A hands-on course repository for learning HTML and CSS from the ground up, covering page structure, semantic markup, browser compatibility, web development tools, and modern design processes.
 
