@@ -1,0 +1,68 @@
+/* Zachary White | CSD 340 | Assignment 3.3 */
+/* instructor | Sue Sampson */
+/* Description: CSS file for Assignment 3.3 */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.side-box {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.right-box {
+    margin-left: 4%;
+}
+
+.list-box {
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.left-box .list-box {
+    border: 1px solid red;
+}
+
+.right-box .list-box {
+    border: 1px dashed red;
+}
+
+h3 {
+    font-weight: 500;
+    text-align: left;
+    margin: 0 0 10px 0;
+}
+
+ol, ul {
+    font-weight: 300;
+    margin: 0;
+}
+
+ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+
+ul {
+    list-style-type: upper-roman;
+    list-style-position: inside;
+}
+
+.bottom-div {
+    width: 100%;
+    margin-top: 60%;
+    float: right;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+a:hover {
+    text-decoration: underline;
+}
