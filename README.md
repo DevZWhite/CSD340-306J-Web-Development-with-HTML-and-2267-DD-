@@ -6,6 +6,8 @@
 
 A hands-on course repository for learning HTML and CSS from the ground up, covering page structure, semantic markup, browser compatibility, web development tools, and modern design processes.
 
+This repository is where I will be posting all related content regarding HTML and CSS throughout my duration here at Bellevue University.
+
 ---
 
 ## 📋 Course Overview
