@@ -1,29 +1,397 @@
 /* Zachary White | CSD 340 | Assignment 3.2 */
 /* instructor | Sue Sampson */
-/* Description: Landing page for CSD 340 assignments */
+/* Description: CSS file for Assignment 3.2 */
+/* Header Layout Setup */
 
-#container {
-  margin-top: 50px;
-  margin-left: 100px;
-  margin-right: 100px;
+/* Without this, padding adds to an element's declared width instead of
+   living inside it — that's what was pushing the full-width header's
+   right-hand padding (and the Link Portal button along with it) off
+   the edge of the screen. */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-h1, h2, h3, h4 {
-  background-color: #062173;
-  color: #ffffff;
-  border: 1px solid #D6A800;
-  padding: 10px;
+/* Full-width top bar: spans edge-to-edge instead of sitting in a centered
+   card, and stays pinned in place while the page scrolls, like a site navbar.
+   The frosted blur lets page content scroll softly underneath it instead of
+   just disappearing behind a flat color. */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  margin: 0;
+  padding: 16px 6%;
+  background-color: rgba(7,16,24,0.82); /* semi-transparent fallback for browsers without backdrop-filter */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(102, 178, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.site-header.hidden {
+  transform: translateY(-100%); /* Slides it upward out of view */
+  opacity: 0;                   /* Fades it out */
+  pointer-events: none;         /* Prevents clicking invisible links */
+}
+
+#container {
+  width: 80%;
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: rgba(7,16,24,0.72); /* semi-transparent fallback for browsers without backdrop-filter */
+  padding: 20px; /* inner spacing so content doesn't touch rounded edges */
+  border-radius: 12px; /* rounded container corners */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+/* Logo: links out to GitHub, with a hover/focus glow ring and a small tooltip label */
+.logo {
+  position: relative;
+}
+
+.logo a {
+  display: inline-flex;
+  border-radius: 50%;
+}
+
+.logo img {
+  width: 88px;
+  height: 88px;
+  padding: 12px;
+  border: 2px solid rgba(102, 178, 255, 0.35);
+  border-radius: 50%;
+  object-fit: cover;
+  display: block; /* remove inline-gap/whitespace if img was inline */
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.logo a:hover img,
+.logo a:focus-visible img {
+  transform: scale(1.06);
+  border-color: rgba(102, 178, 255, 0.9);
+  box-shadow: 0 0 22px rgba(102, 178, 255, 0.35);
+}
+
+.logo a:focus-visible {
+  outline: 2px solid rgba(102, 178, 255, 0.9);
+  outline-offset: 4px;
+}
+
+.logo a::after {
+  content: "GitHub \2197"; /* tooltip label with a small arrow glyph */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 6px);
+  white-space: nowrap;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: #9fd3ff;
+  background: rgba(10, 20, 35, 0.95);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(102, 178, 255, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.logo a:hover::after,
+.logo a:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 10px);
+}
+
+/* Link Portal dropdown, built with native <details>/<summary> so it works with no JavaScript */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: #e6eef2;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(102, 178, 255, 0.2);
+  background: linear-gradient(180deg, rgba(56, 124, 255, 0.95), rgba(29, 78, 216, 0.95));
+  box-shadow: 0 8px 22px rgba(2, 10, 28, 0.45);
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.dropdown-toggle::-webkit-details-marker {
+  display: none; /* hide the default disclosure triangle, use the custom chevron instead */
+}
+
+.dropdown-toggle:hover {
+  background: linear-gradient(180deg, rgba(40, 100, 235, 0.95), rgba(21, 60, 176, 0.95));
+  transform: translateY(-1px);
+}
+
+.dropdown-toggle:focus-visible {
+  outline: 2px solid rgba(102, 178, 255, 0.9);
+  outline-offset: 2px;
+}
+
+/* Custom chevron, rotates to an upward arrow when the dropdown is open */
+.dropdown-chevron {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 200ms ease;
+}
+
+.dropdown[open] .dropdown-chevron {
+  transform: rotate(-135deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 230px;
+  background: linear-gradient(180deg, rgba(18, 38, 88, 0.98), rgba(9, 18, 44, 0.98));
+  border: 1px solid rgba(102, 178, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 14px 34px rgba(2, 10, 28, 0.6);
+  padding: 8px;
+  z-index: 20;
+  animation: dropdownFade 180ms ease;
+}
+
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(102, 178, 255, 0.7);
+  padding: 8px 10px 4px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #e6eef2;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(56, 124, 255, 0.25);
+  color: #eaffff;
+  text-shadow: none; /* override the global a:hover glow so menu rows stay crisp */
+}
+
+.dropdown-divider {
+  height: 1px;
+  margin: 6px 4px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Small screens: stack the logo and Link Portal instead of squeezing them side by side */
+@media (max-width: 480px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .dropdown-menu {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+body {
+  margin: 0; /* browsers add 8px by default; removed so the header truly spans edge-to-edge */
+  /* subtle gradient, improved contrast and smooth text rendering */
+  background:#081318; /* near-black base */
+  color: #e6eef2; /* light text for contrast */
+  /* use a modern, clean font with good readability */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Subtle hover effect for the container to give a sense of depth */
+#container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 50px rgba(2,8,15,0.7);
+}
+
+.gradient-texth1 {
+  border-radius: 12px;
+  border: 1px solid rgba(102, 178, 255, 0.2);
+  font-family: 'Unica One', sans-serif;
+  font-size: 2.5em;
+  font-weight: 200;
+  font-style: normal;
+  text-align: center;
+  background: linear-gradient(
+    to right, 
+    #66b2ff, #9a8cff, #b7fffe
+  );
+  /* I made the background wider than text so it can move */
+  background-size: 200% auto;
+  /* cropped the background to the exact shape of the letters */
+  background-clip: text;
+  /* Hide the text fill color so the moving gradient shows through */
+  color: transparent;
+  /* load Trigger that starts the infinite sliding animation */
+  animation: moveTextGradient 7s linear infinite;
+}
+
+.gradient-texth2 {
+  font-family: 'Unica One', sans-serif;
+  font-size: 1.5em;
+  font-weight: 200;
+  font-style: italic;
+  text-align: center;
+  background: linear-gradient(
+    to left, 
+    #66b2ff, #9a8cff, #8efdfb
+  );
+  /* I made the background wider than text so it can move */
+  background-size: 200% auto;
+  /* cropped the background to the exact shape of the letters */
+  background-clip: text;
+  /* Hide the text fill color so the moving gradient shows through */
+  color: transparent;
+  /* load Trigger that starts the infinite sliding animation */
+  animation: moveTextGradient 7s linear infinite;
+}
+
+/* 6. Continuously shift the position to the right */
+@keyframes moveTextGradient {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 400% center;
+  }
+}
+
+p {
+  color: #cbe7ff;
+  font-size: 1.125em;
+  line-height: 1.6em;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #14252b, transparent);
+  margin: 24px 0;
+}
+
+h3 {
+  font-family: 'Segoe UI', sans-serif; font-weight: 400; font-style: normal;
+  background: linear-gradient(90deg, #b7fffe, #66b2ff, #9a8cff, #b7fffe);
+  background-size: 300% 100%;
+  color: transparent;
+  background-clip: text;
+}
+
+h4 {
+  font-family: 'Segoe UI', sans-serif; font-weight: 400; font-style: normal;
+  background: linear-gradient(90deg, #66b2ff, #9a8cff, #b7fffe, #66b2ff);
+  background-size: 300% 100%;
+  color: transparent;
+  background-clip: text;
+}
+
+/* utility class for other rounded card-like containers */
+.card {
+  background-color: #081318;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #14252b;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(3,10,16,0.6);
 }
 
 a {
-  color: #212392;
+  color: #66b2ff; /* light blue links */
   text-decoration: none;
+  transition: color 180ms ease, text-shadow 180ms ease;
 }
 
 a:hover {
-  color: #0400d3;
+  color: #99d0ff; /* lighter blue on hover */
 }
 
 a:visited {
-  color: #401c7b;
+  color: #9a8cff; /* muted lavender for visited links */
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: linear-gradient(180deg, #1e90ff 0%, #0077d9 100%);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(2,10,30,0.6);
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.btn:hover { transform: translateY(-3px); filter: brightness(1.05); }
+
+/* Code blocks */
+pre, code {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color: #cbe7ff;
+  padding: 8px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+}
+
+/* Responsive padding */
+@media (max-width: 800px) {
+  #container {
+    width: auto;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+/* Futuristic hover highlight with glow instead of bars */
+.text-highlight, h1, h2, h3, h4, p, a {
+  transition: color 180ms ease, text-shadow 180ms ease, filter 180ms ease;
+}
+.text-highlight:hover,
+ a:hover {
+  color: #eaffff;
+  text-shadow: 0 0 18px rgba(102,178,255,0.3), 0 0 28px rgba(154,140,255,0.15);
 }

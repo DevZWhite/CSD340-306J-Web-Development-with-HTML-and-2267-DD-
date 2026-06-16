@@ -1,0 +1,106 @@
+/*
+Apply a CSS grid with three columns for the 3 side-by-side divs (see the above resources section for help/assistance)
+Give the image-gallery div a margin-top of 10%
+Center the h1 text
+Center the h3 text (title for each of the image gallery items)
+Apply text-align center to the figure tag (this will basically center the image in the div)
+Apply a font style of italic to the figcaption text and set the font-size to .75em
+Using rgba, add a different color to the h1, h3, and figcaption tags. optional.
+*/
+
+body {
+  /* page background and default text color, sets the base font and removes default spacing */
+  background-color: #081318;
+  color: #cbe7ff;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  /* main page heading: uses Segoe UI, light weight, gradient clipped to the text and centered */
+  font-family: 'Segoe UI', sans-serif; font-weight: 400; font-style: normal;
+  background: linear-gradient(90deg, #9a8cff, #b7fffe, #66b2ff, #9a8cff);
+  background-size: 300% 100%;
+  color: transparent;
+  background-clip: text;
+  text-align: center;
+  animation: moveTextGradient 7s linear infinite;
+}
+
+@keyframes moveTextGradient {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 400% center;
+  }
+}
+h3 {
+  /* subheadings for gallery items: same approach as h1 but with a different gradient, centered */
+  font-family: 'Segoe UI', sans-serif; font-weight: 400; font-style: normal;
+  background: linear-gradient(90deg, #b7fffe, #66b2ff, #9a8cff, #b7fffe);
+  background-size: 300% 100%;
+  color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+.image-gallery {
+  /* container for the image gallery: rounded border, translucent background, drop shadow, and responsive grid layout */
+  border: 3px solid rgba(42, 115, 148, 0.8);
+  border-radius: 32px;
+  background: rgba(4, 15, 26, 0.85);
+  box-shadow: 0 20px 60px rgba(15, 54, 96, 0.35), inset 0 0 0 1px rgba(183, 255, 254, 0.1);
+  display: grid;
+  /* make grid responsive: auto-fit will wrap items when space is limited */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 10% auto 0;
+  max-width: 1200px;
+  padding: 24px;
+  justify-items: center;
+}
+figure {
+  /* each gallery item wrapper: centers content, adds subtle border and rounded corners, and transitions for hover */
+  text-align: center;
+  border: 1px solid rgba(183, 255, 254, 0.5);
+  background-color: #081318;
+  border-radius: 16px;
+  padding: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+figure:hover {
+  /* hover effect lifts the figure and increases shadow and border emphasis */
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(183, 255, 254, 0.25);
+  border-color: rgba(183, 255, 254, 0.9);
+}
+figcaption {
+  /* caption styling: italic, smaller font size, and a soft rgba color */
+  font-style: italic;
+  font-size: .75em;
+  color: rgba(183, 255, 254, 0.85);
+}
+a {
+  /* link default appearance inside gallery/content */
+  color: rgba(183, 255, 254, 0.95);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover, a:focus {
+  /* link hover/focus state: brighten and underline for accessibility */
+  color: #b7fffe;
+  text-decoration: underline;
+}
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #14252b, transparent);
+  margin: 24px 0;
+}
+.bottom-div {
+    width: 100%;
+    margin-top: 60%;
+    float: right;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}

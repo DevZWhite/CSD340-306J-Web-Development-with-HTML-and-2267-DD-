@@ -1,0 +1,74 @@
+<!--
+Create a new folder under your local csd-340 folder (repository) and name it module-4
+Create a new HTML document and name it LastName_Mod4_2.html, add your name and assignment number (documentation), and add it to your module-4 directory 
+All HTML code will go in this file 
+Create a new CSS document and name it LastName_Mod4_2.css, and add it to your module-4 directory 
+All CSS styling will go in this file 
+Create a new folder and name it “images” and add it to your module-4 directory 
+Find or create an image of three(3) book covers from your list from last week. Save the images in your "images" folder.
+Add a link in the index.html file to the HTML file 
+Hint: refer back to assignment 3.2 if you are confused about what this item is referencing
+Contents of LastName_Mod4_2.html 
+Create an empty HTML document (follow the code we used in Module 3)
+Give the HTML document a title of “CSD 340 Web Development with HTML and CSS” 
+This will be placed in the head/title element
+Add a link to LastName_Mod4_2.css file in the HTML documents element
+Add a main div to the body of the HTML document with an id of “container” 
+Main div
+Add an h1 tag and give it a text value of “Assignment 4.2: Build a Web Page Exercise - Part 4”
+Center the text on the page 
+On a new line add a new div and give it an id of “image-gallery”
+Inside the image-gallery div add three side-by-side divs using CSS grids (see the resources section for assistance). Each of these divs will contain a title, image, and captions. 
+3 side-by-side divs
+Inside each div add an h3 element with a description of the image you are using in that div 
+Under each div add a figure tag and inside the figure tag add one of the downloaded images (one figure per div, one image per figure) 
+Underneath each figure add a figure caption with the author's name using the format: (author: <insert author name here>) 
+Underneath the picture gallery, add a link back to the landing/portal page in the same position as 3.3.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <link rel="stylesheet" href="White_Mod4_2.css">
+</head>
+<body>
+    <div class="container">
+        <h1 >Assignment 4.2: Build a Web Page Exercise - Part 4</h1>
+        <hr>
+        <div class="image-gallery">
+            <div class="book">
+                <h3>Pale Blue Dot</h3>
+                <hr>
+                <figure>
+                    <img src="https://m.media-amazon.com/images/I/51wd9h7r4CL._AC_UF1000,1000_QL80_.jpg" width="200" height="300" alt="Book cover 1">
+                    <figcaption>( Author: Carl Sagan )</figcaption>
+                </figure>
+            </div>
+            <div class="book">
+                <h3>Book Title 2</h3>
+                <hr>
+                <figure>
+                    <img src="https://m.media-amazon.com/images/I/51wd9h7r4CL._AC_UF1000,1000_QL80_.jpg" width="200" height="300" alt="Book cover 2">
+                    <figcaption>(author: Author Two)</figcaption>
+                </figure>
+            </div>
+            <div class="book">
+                <h3>Book Title 3</h3>
+                <hr>
+                <figure>
+                    <img src="https://m.media-amazon.com/images/I/51wd9h7r4CL._AC_UF1000,1000_QL80_.jpg" width="200" height="300" alt="Book cover 3">
+                    <figcaption>(author: Author Three)</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+        <div class="bottom-div" style="text-align: right;">
+            <a href="../index.html">Back to Landing Page</a>
+        </div>
+    </div>
+</body>
+</html>

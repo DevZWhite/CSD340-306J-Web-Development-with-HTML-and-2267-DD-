@@ -3,22 +3,66 @@
 /* Description: CSS file for Assignment 3.3 */
 
 body {
-    font-family: Arial, sans-serif;
+    background-color: #081318;
+    color: #cbe7ff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0; 
 }
 
 h1 {
+  border: 4px solid #14252b;
+  font-family: 'Unica One', sans-serif;
+  font-size: 2.5em;
+  font-weight: 200;
+  font-style: normal;
+  text-align: center;
+  background: linear-gradient(
+    to right, 
+    #66b2ff, #9a8cff, #b7fffe
+  );
+  /* I made the background wider than text so it can move */
+  background-size: 200% auto;
+  /* cropped the background to the exact shape of the letters */
+  background-clip: text;
+  /* Hide the text fill color so the moving gradient shows through */
+  color: transparent;
+  /* load Trigger that starts the infinite sliding animation */
+  animation: moveTextGradient 7s linear infinite;
+}
+
+h3 {
+    border: 4px solid #14252b;
+  /* subheadings for gallery items: same approach as h1 but with a different gradient, centered */
+    font-family: 'Segoe UI', sans-serif; font-weight: 400; font-style: normal;
+    background: linear-gradient(90deg, #b7fffe, #66b2ff, #9a8cff, #b7fffe);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
     text-align: center;
+    animation: moveTextGradient 7s linear infinite;
+}
+
+@keyframes moveTextGradient {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 400% center;
+  }
 }
 
 .side-box {
-    width: 45%;
+    /* lay out two columns that won't overlap: reserve space and allow wrapping on small screens */
+    width: calc(50% - 2%);
+    min-width: 260px;
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
 }
 
 .right-box {
-    margin-left: 4%;
+    margin-left: 2%;
 }
 
 .list-box {
@@ -26,18 +70,22 @@ h1 {
     padding: 10px;
 }
 
-.left-box .list-box {
-    border: 1px solid red;
-}
-
+.left-box .list-box,
 .right-box .list-box {
-    border: 1px dashed red;
+    min-width: fit-content;
+    border: solid #66b2ff;
+    background-color: #081318;
+    /* prevent long words or links from overflowing the box */
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
 }
 
-h3 {
-    font-weight: 500;
-    text-align: left;
-    margin: 0 0 10px 0;
+.right-box .list-box:hover,
+.left-box .list-box:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(183, 255, 254, 0.25);
+  border-color: rgba(183, 255, 254, 0.9);
+
 }
 
 ol, ul {
@@ -63,9 +111,15 @@ ul {
     box-sizing: border-box;
 }
 
-a:hover {
-    color: red;
-    text-decoration: underline;
-    text-decoration-color: red;
-    text-decoration-thickness: 2px;
+a {
+  /* link default appearance inside gallery/content */
+  color: rgba(183, 255, 254, 0.95);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover, a:focus {
+  /* link hover/focus state: brighten and underline for accessibility */
+  color: #b7fffe;
+  text-decoration: underline;
 }
