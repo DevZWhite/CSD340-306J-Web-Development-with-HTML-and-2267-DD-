@@ -34,8 +34,39 @@ Underneath the picture gallery, add a link back to the landing/portal page in th
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSD 340 Web Development with HTML and CSS</title>
     <link rel="stylesheet" href="White_Mod4_2.css">
+    <script src="../script.js" defer></script>
 </head>
 <body>
+    <header class="site-header">
+      <div class="logo">
+        <a href="https://github.com/DevZWhite" target="_blank" rel="noopener noreferrer" aria-label="Visit Zachary White's GitHub profile">
+          <img src="https://i.etsystatic.com/42333869/r/il/a813c5/6147340835/il_fullxfull.6147340835_70ws.jpg" alt="Zachary White GitHub">
+        </a>
+      </div>
+      <nav class="navigation">
+        <!-- Link Portal: dropdown built with native <details>/<summary>, no JS required -->
+        <details class="dropdown">
+          <summary class="dropdown-toggle">
+            Link Portal
+            <span class="dropdown-chevron" aria-hidden="true"></span>
+          </summary>
+
+        <div class="dropdown-menu" role="menu">
+            <span class="dropdown-label">Module Assignments</span>
+            <a href="../Module-1/White_Mod1_3.html" role="menuitem">Assignment 1.3</a>
+            <a href="../Module-2/White_Mod2_2.html" role="menuitem">Assignment 2.2</a>
+            <a href="../Module-3/White_Mod3_3.html" role="menuitem">Assignment 3.3</a>
+            <a href="../Module-4/White_Mod4_2.html" role="menuitem">Assignment 4.2</a>
+
+            <div class="dropdown-divider"></div>
+
+            <span class="dropdown-label">Projects</span>
+            <a href="BioSite_Project_Home_Page.html" role="menuitem">BioSite Project Home Page</a>
+            <a href="Final_Exam.html" role="menuitem">Final Exam</a>
+        </div>
+        </details>
+      </nav>
+    </header>
     <div class="container">
         <h1 >Assignment 4.2: Build a Web Page Exercise - Part 4</h1>
         <hr>
