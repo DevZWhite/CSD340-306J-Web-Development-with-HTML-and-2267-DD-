@@ -52,22 +52,15 @@
   transition: transform 240ms ease, box-shadow 240ms ease;
 }
 
-/* Logo: links out to GitHub, with a hover/focus glow ring and a small tooltip label */
-
 .logo {
-
+  
   position: relative;
-
 }
-
-
 
 .logo a {
 
   display: inline-flex;
-
   border-radius: 50%;
-
 }
 
 
@@ -75,221 +68,56 @@
 .logo img {
 
   width: 88px;
-
   height: 88px;
-
   padding: 12px;
-
   border: 2px solid rgba(102, 178, 255, 0.35);
-
   border-radius: 50%;
-
   object-fit: cover;
-
   display: block; /* remove inline-gap/whitespace if img was inline */
-
   background: rgba(255, 255, 255, 0.03);
-
   transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
-
 }
 
-
-
 .logo a:hover img,
-
 .logo a:focus-visible img {
 
   transform: scale(1.06);
-
   border-color: rgba(102, 178, 255, 0.9);
-
   box-shadow: 0 0 22px rgba(102, 178, 255, 0.35);
 
 }
-
-
 
 .logo a:focus-visible {
 
   outline: 2px solid rgba(102, 178, 255, 0.9);
-
   outline-offset: 4px;
-
 }
-
-
 
 .logo a::after {
 
   content: "GitHub \2197"; /* tooltip label with a small arrow glyph */
-
   position: absolute;
-
   top: 100%;
-
   left: 50%;
-
   transform: translate(-50%, 6px);
-
   white-space: nowrap;
-
   font-size: 11px;
-
   letter-spacing: 0.04em;
-
   color: #9fd3ff;
-
   background: rgba(10, 20, 35, 0.95);
-
   padding: 4px 10px;
-
   border-radius: 6px;
-
   border: 1px solid rgba(102, 178, 255, 0.25);
-
   opacity: 0;
-
   pointer-events: none;
-
   transition: opacity 180ms ease, transform 180ms ease;
-
 }
 
-
-
 .logo a:hover::after,
-
 .logo a:focus-visible::after {
 
   opacity: 1;
-
   transform: translate(-50%, 10px);
-
-}
-
-
-
-/* Groups the GitHub avatar and the landing-page icon together on the left
-
-   side of the header, so .site-header's space-between still just has two
-
-   things to balance: this group, and the Link Portal nav. */
-
-.brand-group {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 16px;
-
-}
-
-
-
-/* Logo2: links out to The Landing Page, with a hover/focus glow ring and a small tooltip label */
-
-.logo2 {
-
-  position: relative;
-
-}
-
-.logo2 a {
-
-  display: inline-flex;
-
-  border-radius: 50%;
-
-}
-
-.logo2 svg {
-
-  width: 88px;
-
-  height: 88px;
-
-  padding: 12px;
-
-  border: 2px solid rgba(102, 178, 255, 0.35);
-
-  border-radius: 50%;
-
-  color: rgba(102, 178, 255, 0.85);
-
-  display: block; /* remove inline-gap/whitespace if svg was inline */
-
-  background: rgba(255, 255, 255, 0.03);
-
-  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
-
-}
-
-.logo2 a:hover svg,
-
-.logo2 a:focus-visible svg {
-
-  transform: scale(1.06);
-
-  border-color: rgba(102, 178, 255, 0.9);
-
-  box-shadow: 0 0 22px rgba(102, 178, 255, 0.35);
-
-}
-
-.logo2 a:focus-visible {
-
-  outline: 2px solid rgba(102, 178, 255, 0.9);
-
-  outline-offset: 4px;
-
-}
-
-.logo2 a::after {
-
-  content: "Landing Page \2197"; /* tooltip label with a small arrow glyph */
-
-  position: absolute;
-
-  top: 100%;
-
-  left: 50%;
-
-  transform: translate(-50%, 6px);
-
-  white-space: nowrap;
-
-  font-size: 11px;
-
-  letter-spacing: 0.04em;
-
-  color: #9fd3ff;
-
-  background: rgba(10, 20, 35, 0.95);
-
-  padding: 4px 10px;
-
-  border-radius: 6px;
-
-  border: 1px solid rgba(102, 178, 255, 0.25);
-
-  opacity: 0;
-
-  pointer-events: none;
-
-  transition: opacity 180ms ease, transform 180ms ease;
-
-}
-
-.logo2 a:hover::after,
-
-.logo2 a:focus-visible::after {
-
-  opacity: 1;
-
-  transform: translate(-50%, 10px);
-
 }
 
 /* Link Portal dropdown, built with native <details>/<summary> so it works with no JavaScript */

@@ -28,6 +28,8 @@ window.addEventListener('scroll', () => {
    text labeled "current" instead of leaving it clickable. Works the same
    on every page without any per-page setup, since it just compares
    filenames rather than relying on a hand-added "this is page X" marker. */
+
+   
 (function () {
   var links = document.querySelectorAll('.dropdown-menu a[href]');
   var currentFile = location.pathname.split('/').pop();
