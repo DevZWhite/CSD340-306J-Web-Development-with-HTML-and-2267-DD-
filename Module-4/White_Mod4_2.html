@@ -1,29 +1,11 @@
 <!--
-Create a new folder under your local csd-340 folder (repository) and name it module-4
-Create a new HTML document and name it LastName_Mod4_2.html, add your name and assignment number (documentation), and add it to your module-4 directory 
-All HTML code will go in this file 
-Create a new CSS document and name it LastName_Mod4_2.css, and add it to your module-4 directory 
-All CSS styling will go in this file 
-Create a new folder and name it “images” and add it to your module-4 directory 
-Find or create an image of three(3) book covers from your list from last week. Save the images in your "images" folder.
-Add a link in the index.html file to the HTML file 
-Hint: refer back to assignment 3.2 if you are confused about what this item is referencing
-Contents of LastName_Mod4_2.html 
-Create an empty HTML document (follow the code we used in Module 3)
-Give the HTML document a title of “CSD 340 Web Development with HTML and CSS” 
-This will be placed in the head/title element
-Add a link to LastName_Mod4_2.css file in the HTML documents element
-Add a main div to the body of the HTML document with an id of “container” 
-Main div
-Add an h1 tag and give it a text value of “Assignment 4.2: Build a Web Page Exercise - Part 4”
-Center the text on the page 
-On a new line add a new div and give it an id of “image-gallery”
-Inside the image-gallery div add three side-by-side divs using CSS grids (see the resources section for assistance). Each of these divs will contain a title, image, and captions. 
-3 side-by-side divs
-Inside each div add an h3 element with a description of the image you are using in that div 
-Under each div add a figure tag and inside the figure tag add one of the downloaded images (one figure per div, one image per figure) 
-Underneath each figure add a figure caption with the author's name using the format: (author: <insert author name here>) 
-Underneath the picture gallery, add a link back to the landing/portal page in the same position as 3.3.
+Zachary White
+Sue Samspon
+CSD340
+06/19/2026
+This assignment shows the use of containering object within a nested div,
+every assignment requirement will be shown using
+an assignment requirement comment for easy reference and grading.
 -->
 
 <!DOCTYPE html>
@@ -44,14 +26,15 @@ Underneath the picture gallery, add a link back to the landing/portal page in th
           <img src="https://i.etsystatic.com/42333869/r/il/a813c5/6147340835/il_fullxfull.6147340835_70ws.jpg" alt="Zachary White GitHub">
         </a>
       </div>
-      <div class="logo2">
+      <div class="logo2"> <!-- Assignment Requirement, I hope that it is ok that I redesigned the home and github 
+        links into this header section-->
         <a href="../index.html" aria-label="Back to the landing page">
           <img src="https://cdn-icons-png.flaticon.com/512/6717/6717248.png">
         </a>
         </div>
       </div>
       <nav class="navigation">
-        <!-- Link Portal: dropdown built with native <details>/<summary>, no JS required -->
+        <!-- Link Portal:-->
         <details class="dropdown">
           <summary class="dropdown-toggle">
             Link Portal
@@ -71,36 +54,35 @@ Underneath the picture gallery, add a link back to the landing/portal page in th
         </details>
       </nav>
     </header>
-    <div id="container">
+    <div id="container"> <!-- Assignment Requirement My main div-->
         <h1 >Assignment 4.2: Build a Web Page Exercise - Part 4</h1>
         <hr>
         <div class="image-gallery">
-            <div class="book">
+            <div class="book"> <!-- Assignment Requirement side by side 1-->
                 <h3>Pale Blue Dot</h3>
                 <hr>
                 <figure>
-                    <img src="https://m.media-amazon.com/images/I/51wd9h7r4CL._AC_UF1000,1000_QL80_.jpg" width="200" height="300" alt="Book cover 1">
+                    <img src="..\Module-4\images\Pale_Blue_Dot.jpg" width="200" height="300" alt="Book cover 1">
                     <figcaption>( Author: Carl Sagan )</figcaption>
                 </figure>
             </div>
-            <div class="book">
-                <h3>Book Title 2</h3>
+            <div class="book"> <!-- Assignment Requirement side by side 2-->
+                <h3>The Grand Design</h3>
                 <hr>
                 <figure>
-                    <img src="https://m.media-amazon.com/images/I/51wd9h7r4CL._AC_UF1000,1000_QL80_.jpg" width="200" height="300" alt="Book cover 2">
-                    <figcaption>(author: Author Two)</figcaption>
+                    <img src="../Module-4/images/The_Grand_Design.jpg" width="200" height="300" alt="Book cover 2">
+                    <figcaption>(author: Stephen Hawking)</figcaption>
                 </figure>
             </div>
-            <div class="book">
-                <h3>Book Title 3</h3>
+            <div class="book"> <!-- Assignment Requirement side by side 3-->
+                <h3>Space & Time</h3>
                 <hr>
                 <figure>
-                    <img src="https://m.media-amazon.com/images/I/51wd9h7r4CL._AC_UF1000,1000_QL80_.jpg" width="200" height="300" alt="Book cover 3">
-                    <figcaption>(author: Author Three)</figcaption>
+                    <img src="../Module-4/images/Space_Time.jpg" width="200" height="300" alt="Book cover 3">
+                    <figcaption>(author: Hans Reichenbach)</figcaption>
                 </figure>
             </div>
         </div>
     </div>
-
 </body>
 </html>

@@ -36,8 +36,9 @@ Using rgba, add a different color to the h1, h3, and figcaption tags. optional.
 }
 
 #container {
-  width: 80%;
-  max-width: 600px;
+  width: 50%;
+  max-width: 1200px;
+  min-width: 800px;
   margin: 40px auto;
   background-color: rgba(7,16,24,0.72); /* semi-transparent fallback for browsers without backdrop-filter */
   padding: 20px; /* inner spacing so content doesn't touch rounded edges */
@@ -554,7 +555,6 @@ Using rgba, add a different color to the h1, h3, and figcaption tags. optional.
 }
 
 
-
 body {
   /* page background and default text color, sets the base font and removes default spacing */
   background-color: #081318;
@@ -564,7 +564,8 @@ body {
   padding: 0;
 }
 h1 {
-  /* main page heading: uses Segoe UI, light weight, gradient clipped to the text and centered */
+  /* Assignment Requirement:
+  main page heading: uses Segoe UI, light weight, gradient clipped to the text and centered */
   font-family: 'Segoe UI', sans-serif; font-weight: 400; font-style: normal;
   background: linear-gradient(90deg, #9a8cff, #b7fffe, #66b2ff, #9a8cff);
   background-size: 300% 100%;
@@ -583,16 +584,23 @@ h1 {
   }
 }
 h3 {
-  /* subheadings for gallery items: same approach as h1 but with a different gradient, centered */
+  /* Assignment Requirement:
+  I hope that it is okay for me to not use rgba for the coloring here 
+  as I prefer to have my gradient scroll color text it fills using a background cut to my text shape
+  subheadings for gallery items: same approach as h1 but with a different gradient, centered */
   font-family: 'Segoe UI', sans-serif; font-weight: 400; font-style: normal;
-  background: linear-gradient(90deg, #b7fffe, #66b2ff, #9a8cff, #b7fffe);
-  background-size: 300% 100%;
+  background: linear-gradient(90deg,#b7fffe, #66b2ff, #9a8cff, #b7fffe);
+  background-size: 200% 100%;
   color: transparent;
   background-clip: text;
+  animation: moveTextGradient 7s linear infinite;
   text-align: center;
 }
+
 .image-gallery {
-  /* container for the image gallery: rounded border, translucent background, drop shadow, and responsive grid layout */
+  /* Assignment Requirement:
+  constructs grid that is responsive images are specfied to width and 
+  container is checked for min width to ensure grid is wrapping correctly.*/
   border: 3px solid rgba(42, 115, 148, 0.8);
   border-radius: 32px;
   background: rgba(4, 15, 26, 0.85);
@@ -607,7 +615,10 @@ h3 {
   justify-items: center;
 }
 figure {
-  /* each gallery item wrapper: centers content, adds subtle border and rounded corners, and transitions for hover */
+  /* Assignment Requirement:
+  each gallery item wrapper: centers content, 
+  adds subtle border and rounded corners, 
+  and transitions for hover */
   text-align: center;
   border: 1px solid rgba(183, 255, 254, 0.5);
   background-color: #081318;
@@ -622,7 +633,8 @@ figure:hover {
   border-color: rgba(183, 255, 254, 0.9);
 }
 figcaption {
-  /* caption styling: italic, smaller font size, and a soft rgba color */
+  /* Assignment Requirement:
+  caption styling: italic, smaller font size at .75em, and a soft rgba color */
   font-style: italic;
   font-size: .75em;
   color: rgba(183, 255, 254, 0.85);
