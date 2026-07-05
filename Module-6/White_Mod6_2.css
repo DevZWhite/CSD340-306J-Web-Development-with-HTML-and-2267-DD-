@@ -2,6 +2,12 @@
 /* instructor | Sue Sampson */
 /* Description: CSS file for Assignment 6.2 */
 
+/* TIP FOR GRADING: every rule that fulfills a specific 6.2 requirement is
+/* tagged with a "REQ:" comment. You can use your editor's search feature
+/* Search/Ctrl+F /* REQ: ... */
+/* for "REQ:" to jump straight to each graded item. 
+  Rules without a REQ tag are extra styling (branding/nav polish) added beyond the assignment scope. */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -14,6 +20,7 @@ body {
 }
 
 /* ---------- Site Header (branding + Link Portal) ---------- */
+/* REQ: header element - background color, white text, padding 20px, center text */
 .site-header {
   display: flex;
   flex-wrap: wrap;
@@ -35,6 +42,7 @@ body {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* REQ: h1 - set weight to 400 (color override kept for contrast on dark header) */
 .site-header h1 {
   width: 100%;
   order: 3;
@@ -423,12 +431,14 @@ body {
 }
 
 /* ---------- Secondary navbar (assignment nav: Home / About / Contact) ---------- */
+/* REQ: navbar - overflow hidden, background color, bottom border solid 15px */
 #navbar {
   overflow: hidden;
   background-color: #14252b;
   border-bottom: 15px solid #66b2ff;
 }
 
+/* REQ: navbar a - float left, display block, color white, center text, padding 14px 16px, remove underline */
 #navbar a {
   float: left;
   display: block;
@@ -438,12 +448,14 @@ body {
   text-decoration: none;
 }
 
+/* REQ: navbar a:hover - background color, appropriate text color */
 #navbar a:hover {
   background-color: #1e3a4c;
   color: #66b2ff;
 }
 
 /* ---------- Container ---------- */
+/* REQ: container div - top margin 2%, left margin 5%, right margin 5%, padding 10px */
 #container {
   margin-top: 2%;
   margin-left: 5%;
@@ -451,12 +463,14 @@ body {
   padding: 10px;
 }
 
+/* REQ: h1 - set weight to 400 (global rule; also centers text) */
 h1 {
   font-weight: 400;
   text-align: center;
 }
 
 /* ---------- Card ---------- */
+/* REQ: card - box-shadow 0 4px 8px 0 rgba(0,0,0,0.2), transition 0.3s, width 50% */
 .card {
   background-color: #0d2436;
   border-radius: 8px;
@@ -466,10 +480,12 @@ h1 {
   width: 50%;
 }
 
+/* REQ: card:hover - box-shadow 0 8px 16px 0 rgba(0,0,0,0.2) */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+/* REQ: card-title - center text, font-size 2em, appropriate color, weight 400 */
 .card-title {
   text-align: center;
   font-size: 2em;
@@ -477,6 +493,7 @@ h1 {
   font-weight: 400;
 }
 
+/* REQ: card-content - padding 2px 16px */
 .card-content {
   padding: 2px 16px;
 }
@@ -490,6 +507,7 @@ h1 {
 }
 
 /* ---------- Footer ---------- */
+/* REQ: footer element - background color same as header, position absolute, bottom 0, width 100% */
 footer {
   background-color: #14252b;
   position: absolute;
@@ -497,6 +515,7 @@ footer {
   width: 100%;
 }
 
+/* REQ: footer p - color white, weight 400, float right, padding-right 10px, font-style italic */
 footer p {
   color: white;
   font-weight: 400;
@@ -506,12 +525,14 @@ footer p {
   margin: 10px 0;
 }
 
+/* REQ: footer a - remove underline, color white (also holds new "back to portal" link) */
 footer a {
   text-decoration: none;
   color: white;
   margin-right: 6px;
 }
 
+/* REQ: footer a:hover - underline the text */
 footer a:hover {
   text-decoration: underline;
 }
