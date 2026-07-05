@@ -24,8 +24,10 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.site-header--hidden {
+.site-header.hidden {
   transform: translateY(-100%); /* Slides it upward out of view */
+  opacity: 0;                   /* Fades it out */
+  pointer-events: none;         /* Prevents clicking invisible links */
 }
 
 #container {
