@@ -16,6 +16,7 @@ body {
 /* ---------- Site Header (branding + Link Portal) ---------- */
 .site-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   position: sticky;
@@ -23,13 +24,22 @@ body {
   z-index: 50;
   width: 100%;
   margin: 0;
-  padding: 16px 6%;
-  background-color: rgba(7,16,24,0.82);
+  padding: 20px 6%;
+  background-color: #14252b;
+  color: white;
+  text-align: center;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(102, 178, 255, 0.15);
   box-shadow: 0 8px 24px rgba(0,0,0,0.45);
   transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.site-header h1 {
+  width: 100%;
+  order: 3;
+  margin: 12px 0 0;
+  color: white;
 }
 
 .site-header.hidden {
@@ -481,7 +491,7 @@ h1 {
 
 /* ---------- Footer ---------- */
 footer {
-  background-color: #0d2436;
+  background-color: #14252b;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -499,6 +509,7 @@ footer p {
 footer a {
   text-decoration: none;
   color: white;
+  margin-right: 6px;
 }
 
 footer a:hover {
