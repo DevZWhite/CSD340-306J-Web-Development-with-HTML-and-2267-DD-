@@ -318,6 +318,22 @@ hr {
   margin: 12px 0;
 }
 
+ul {
+  list-style-type: square;
+  text-align: left;
+  padding: 0 20px;
+  margin: 0 0 16px 0;
+}
+
+.assignments {
+  list-style-type: square;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 0;
+}
+
 h3 {
   font-family: 'Segoe UI', sans-serif; font-weight: 400; font-style: normal;
   background: linear-gradient(90deg, #b7fffe, #66b2ff, #9a8cff, #b7fffe);
