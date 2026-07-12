@@ -1,6 +1,6 @@
-<!-- Zachary White | CSD 340 | Assignment 6.2 -->
+<!-- Zachary White | CSD 340 | Assignment 8.2 -->
 <!-- instructor | Sue Sampson -->
-<!-- Description: Web page for Assignment 6.2 -->
+<!-- Description: Web page for Assignment 8.2 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSD 340 Web Development with HTML and CSS</title>
-    <link rel="stylesheet" href="White_Mod6_2.css">
+    <link rel="stylesheet" href="White_Mod8_2.css">
     <script src="../script.js" defer></script>
 </head>
 <body>
@@ -28,7 +28,7 @@
       </div>
       <nav class="navigation">
 
-<!-- Link Portal: dropdown built with native <details>/<summary>, no JS required -->
+<!-- Link Portal: dropdown built with native <details>/<summary>-->
         <details class="dropdown">
           <summary class="dropdown-toggle">
             Link Portal
@@ -49,7 +49,7 @@
           </div>
         </details>
       </nav>
-      <h1>Assignment 6.2: Build a Web Page - Part 5</h1>
+      <h1>Assignment 8.2: Build a Web Page - Part 6</h1>
     </header>
 
     <div id="navbar">
@@ -59,6 +59,66 @@
     </div>
 
     <div id="container">
+        <div class="card">
+          <div class="card-title">Top 5 Favorite Movies</div>
+          <div class="card-content">
+            <table id="movies">
+              <tr>
+                <th>Movie Name</th>
+                <th>Two Characters</th>
+              </tr>
+              <tr>
+                <td>The Lord of the Rings: The Fellowship of the Ring</td>
+                <td>
+                  <ul>
+                    <li>Frodo Baggins</li>
+                    <li>Gandalf</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>The Dark Knight</td>
+                <td>
+                  <ul>
+                    <li>Bruce Wayne / Batman</li>
+                    <li>The Joker</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Inception</td>
+                <td>
+                  <ul>
+                    <li>Dom Cobb</li>
+                    <li>Arthur</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Spirited Away</td>
+                <td>
+                  <ul>
+                    <li>Chihiro</li>
+                    <li>Haku</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Gladiator</td>
+                <td>
+                  <ul>
+                    <li>Maximus</li>
+                    <li>Commodus</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <br>
+        <br>
+
         <div class="card">
           <div class="card-title">Top 5 Favorite Foods</div>
           <div class="card-content">
@@ -76,6 +136,7 @@
 <!-- Footer -->
       <footer class="site-footer" role="contentinfo">
         <div class="footer-inner">
+        <p class="footer-left">&copy; 2026 White</p>
         <p class="copyright"><a href="../index.html">Back to Portal</a> | &copy; 2026 Zachary White | CSD 340 Web Development with HTML and CSS</p>
         </div>
       </footer>
