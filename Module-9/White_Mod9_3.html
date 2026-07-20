@@ -1,0 +1,113 @@
+<!-- Zachary White | CSD 340 | Assignment 9.3 -->
+<!--instructor | Sue Sampson |-->
+<!--Description: Fun with JavaScript -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="purpose"
+    content="CSD 340 Web Development with HTML and CSS Module 9 Assignment 9.3, JavaScript - Part 1">
+    <meta name="Author" 
+    content="Zachary White">
+    <meta name="Description" 
+    content="this is a simple web page created for the CSD 340 assignment.">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <link rel="stylesheet" href="White_Mod9_3.css">
+    <!--
+    The script.js file is included to provide any necessary JavaScript functionality for the page. 
+    It is loaded with the defer attribute to ensure it runs after the HTML is parsed.
+    secondly, I understand that the assignment requires a separate JavaScript file for the specific 
+    functionality of this page, so I have included White_Mod9_3.js as well.
+    typically, I would include the script as one singular file, but in sake of grading and assignment 
+    requirements, I have included both script files separately. 
+    I also went a little extra and hid the buttons after they are clicked, 
+    so that the user cannot click them again and change the text back to the blank.
+     -->
+    <script src="../script.js" defer></script>
+    <script src="White_Mod9_3.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand-group">
+        <div class="logo">
+          <a href="https://github.com/DevZWhite" target="_blank" rel="noopener noreferrer" aria-label="Visit Zachary White's GitHub profile">
+            <img src="https://i.etsystatic.com/42333869/r/il/a813c5/6147340835/il_fullxfull.6147340835_70ws.jpg" alt="Zachary White GitHub">
+          </a>
+        </div>
+        <div class="logo2">
+          <a href="../index.html" aria-label="Back to the landing page">
+            <img src="https://cdn-icons-png.flaticon.com/512/6717/6717248.png" alt="Back to landing page">
+          </a>
+        </div>
+      </div>
+      <nav class="navigation">
+        <!-- Link Portal: dropdown built with native <details>/<summary>, no JS required -->
+        <details class="dropdown">
+          <summary class="dropdown-toggle">
+            Link Portal
+            <span class="dropdown-chevron" aria-hidden="true"></span>
+          </summary>
+
+        <div class="dropdown-menu" role="menu">
+            <span class="dropdown-label">Module Assignments</span>
+            <a href="../Module-1/White_Mod1_3.html" role="menuitem">Assignment 1.3</a>
+            <a href="../Module-2/White_Mod2_2.html" role="menuitem">Assignment 2.2</a>
+            <a href="../Module-3/White_Mod3_3.html" role="menuitem">Assignment 3.3</a>
+            <a href="../Module-4/White_Mod4_2.html" role="menuitem">Assignment 4.2</a>
+            <a href="../Module-6/White_Mod6_2.html" role="menuitem">Assignment 6.2</a>
+            <a href="../Module-8/White_Mod8_2.html" role="menuitem">Assignment 8.2</a>
+            <a href="../Module-9/White_Mod9_3.html" role="menuitem">Assignment 9.3</a>
+
+            <div class="dropdown-divider"></div>
+
+            <span class="dropdown-label">Projects</span>
+            <a href="https://devzwhite.github.io/CSD340-biosite/" role="menuitem">BioSite Project Home Page</a>
+            <a href="../Final_Exam.html" role="menuitem">Final Exam</a>
+        </div>
+        </details>
+      </nav>
+    </header>
+
+      <div id="container">
+      <h1>Assignment 9.3: JavaScript - Part 1</h1>
+      <h2>A Quiet Evening, Fill in the Blanks</h2>
+      <p class="intro">Below is a short story pulled from an ordinary evening in my life. Four words have been
+        left out and replaced with an underscored blank. Click each button to reveal the missing word,
+        one at a time, using a little bit of JavaScript.</p>
+    <hr>
+      <p>The workbench lights hummed as I picked up my
+        <span class="blank" id="blank1">____________</span>
+        <button type="button" onclick="revealWord('blank1', word1, this)">Reveal Word 1</button>,
+        ready to lay down another coat of primer on the half-finished Gundam kit sitting in front of me.
+        The smell of thinner and the quiet hiss of compressed air had become as familiar to me as
+        the sound of my own front door closing after a long day at work.</p>
+
+      <p>Later that night, once the paint had a chance to cure, I logged into
+        <span class="blank" id="blank2">____________</span>
+        <button type="button" onclick="revealWord('blank2', word2, this)">Reveal Word 2</button>,
+        the sprawling world of Final Fantasy XIV, and chased down a raid boss with my static group.
+        Somewhere between dodging attack patterns and calling out mechanics in party chat, the stress
+        of the day melted away entirely.</p>
+
+      <p>Between paint sessions and dungeon runs, I opened my laptop and stared at a stubborn
+        <span class="blank" id="blank3">____________</span>
+        <button type="button" onclick="revealWord('blank3', word3, this)">Reveal Word 3</button>
+        program that refused to compile. I read the error message four times before I finally spotted
+        the missing semicolon, and there is a strange, satisfying rush that comes with fixing a bug
+        right before bed.</p>
+
+      <p>Some people might call it exhausting to juggle so many hobbies at once, but I call it
+        <span class="blank" id="blank4">____________</span>
+        <button type="button" onclick="revealWord('blank4', word4, this)">Reveal Word 4</button>
+        &mdash; the very same quality the Arizona desert taught me long before I ever picked up a
+        controller, an airbrush, or a keyboard.</p>
+
+      <hr />
+
+
+  </div>
+
+  </body>
+</html>
